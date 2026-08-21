@@ -35,6 +35,16 @@ describe('responsive interaction contract', () => {
 		expect(source).toContain('@media (prefers-reduced-motion: reduce)');
 		expect(source).toContain('transition: none;');
 	});
+
+	test('limits hover feedback to fine hover-capable pointers', () => {
+		expect(source).toContain("@media (hover: hover) and (pointer: fine) {");
+		expect(source).toMatch(
+			/@media \(hover: hover\) and \(pointer: fine\) \{\s*\.worn-select-card:hover:not\(\[aria-pressed='true'\]\):not\(:disabled\) \{\s*border-color: var\(--cockpit-border-strong\);/u
+		);
+		expect(source).toContain(".worn-select-card[aria-pressed='true'] {");
+		expect(source).toContain('.worn-select-card:focus-visible');
+		expect(source).toContain('.worn-select-card:disabled {');
+	});
 });
 
 describe('theme states', () => {
