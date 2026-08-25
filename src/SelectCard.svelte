@@ -73,7 +73,7 @@
 		}
 	}
 	.worn-select-card:focus-visible {
-		outline: 2px dashed var(--cockpit-accent);
+		outline: 2px dashed var(--worn-select-card-focus, currentColor);
 		outline-offset: 2px;
 	}
 	.worn-select-card:disabled {
