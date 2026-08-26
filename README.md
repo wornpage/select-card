@@ -62,8 +62,8 @@ container only when a product surface needs a different established type size.
 
 ## Theme tokens
 
-- `--worn-select-card-focus` — focus outline; falls back to the card's
-  state-aware `currentColor`
+- `--worn-select-card-focus` — focus outline; falls back to the shared
+  `--worn-focus` theme token, then `currentColor`
 
 ## Commands
 
